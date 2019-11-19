@@ -13,8 +13,8 @@ def microservice_exists(microservice):
 
 @microservices.route('/microservices', methods=['POST'], strict_slashes=False)
 def publish():
-    result = microservices_metadata.load(request.json, unknown=EXCLUDE)
+    result = microservice_metadata.load(request.json, unknown=EXCLUDE)
     if microservice_exists(result):
         return jsonify('Microservice already exists'), 409
-    microservices_metadata.insert_one(result)
+    microservices_metadata.insert_one(result.copy())
     return jsonify(result), 201
