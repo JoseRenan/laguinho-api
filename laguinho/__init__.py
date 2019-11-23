@@ -5,9 +5,11 @@ from .extensions import mongo
 def register_blueprints(app):
     from .errors.handlers import errors
     from .routes.metadata import metadata
+    from .routes.datasets import datasets
     from .routes.microservices import microservices
     app.register_blueprint(errors)
     app.register_blueprint(metadata)
+    app.register_blueprint(datasets)
     app.register_blueprint(microservices)
 
 

@@ -12,6 +12,7 @@ yapf = "*"
 flask = "*"
 marshmallow = "*"
 flask-pymongo = "*"
+requests = "*"
 
 [requires]
 python_version = "3"
