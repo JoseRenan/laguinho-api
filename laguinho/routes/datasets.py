@@ -15,8 +15,7 @@ def retrieve_dataset(owner, repo):
     metadata = metadata_db.find_one({'name': name})
     microservice = microservices_metadata.find_one(
         {'name': metadata['source']})
-    print(metadata)
-    print(microservice)
+
     if not metadata or not microservice:
         return '', 404
 
